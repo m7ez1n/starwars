@@ -25,4 +25,18 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: 0;  
   }
+
+  body {
+    .dark {
+      --texts: #FFE300;
+      --background: #1c1e22;
+      --hoverEffect: #272b30;
+    }
+
+    .light {
+      --texts: #000;
+      --background: #f0f0f3;
+      --hoverEffect: #ccc;
+    }
+  }
 `;
