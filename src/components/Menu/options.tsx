@@ -1,13 +1,13 @@
 import { FaJediOrder, FaUserAstronaut, FaSith, FaSun } from 'react-icons/fa';
 import { GiFilmSpool } from 'react-icons/gi';
 
-type IOption = {
+type Option = {
   icon: React.ReactNode;
   title: string;
   path?: string;
-}[];
+};
 
-export const options: IOption = [
+export const options: Option[] = [
   {
     icon: <FaJediOrder size={25} />,
     title: 'Jedis',

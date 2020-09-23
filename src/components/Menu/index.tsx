@@ -39,8 +39,8 @@ export const Menu = ({ isLight, setIsLight }: MenuProps) => {
           </S.navbarLink>
         </S.logo>
 
-        {options.map((opt, idx) => (
-          <S.navItem key={`${idx}-key`}>
+        {options.map((opt) => (
+          <S.navItem key={opt.title}>
             <S.navbarLink>
               {opt.icon}
               <S.linkText>{opt.title}</S.linkText>
