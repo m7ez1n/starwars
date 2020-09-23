@@ -1,6 +1,5 @@
-
-import { FaJediOrder, FaUserAstronaut, FaSith } from 'react-icons/fa';
-import { GiFilmSpool, GiMoon } from 'react-icons/gi';
+import { FaJediOrder, FaUserAstronaut, FaSith, FaSun } from 'react-icons/fa';
+import { GiFilmSpool } from 'react-icons/gi';
 
 type IOption = {
   icon: React.ReactNode;
@@ -28,9 +27,5 @@ export const options: IOption = [
     icon: <FaUserAstronaut size={25} />,
     title: 'Characters',
     path: '/Characters',
-  },
-  {
-    icon: <GiMoon size={25} />,
-    title: 'Themify',
   },
 ];

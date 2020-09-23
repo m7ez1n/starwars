@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const leftbar = styled.nav`
   position: fixed;
-  background-color: #1c1e22;
+  background-color: var(--background);
   transition: width 600ms ease;
   overflow: auto;
 
@@ -11,11 +11,11 @@ export const leftbar = styled.nav`
   } 
 
   &::-webkit-scrollbar-track {
-    background: #1c1e22;
+    background: var(--background);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #1c1e22;
+    background: var(--background);
   }
 
   @media only screen and (max-width: 600px) {
@@ -67,7 +67,7 @@ export const navbarLink = styled.a`
   display: flex;
   align-items: center;
   height: 5rem;
-  color: #FFE300;
+  color: var(--texts);
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
   transition: 600ms;
@@ -80,7 +80,7 @@ export const navbarLink = styled.a`
 
   &:hover {
     filter: grayscale(0%) opacity(1);
-    background: #272b30;
+    background: var(--hoverEffect);
     cursor: pointer;
   }
 
@@ -103,8 +103,8 @@ export const logo = styled.li`
   text-transform: uppercase;
   margin-bottom: 1rem;
   text-align: center;
-  color:#FFE300;
-  background: #272b30;
+  color: var(--texts);
+  background: var(--background);
   font-size: 1.5rem;
   letter-spacing: 0.3ch;
   width: 100%;
@@ -119,6 +119,13 @@ export const logo = styled.li`
     position: absolute;
     left: -999px;
     transition: 600ms;
+  }
+
+  &:hover {
+    svg {
+      transform: rotate(360deg);
+      transition: 600ms;
+    }
   }
 
   @media only screen and (max-width: 600px) {
