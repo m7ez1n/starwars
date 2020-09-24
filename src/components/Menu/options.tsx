@@ -1,23 +1,13 @@
-import { FaJediOrder, FaUserAstronaut, FaSith, FaSun } from 'react-icons/fa';
-import { GiFilmSpool } from 'react-icons/gi';
+import { FaUserAstronaut } from 'react-icons/fa';
+import { GiFilmSpool, GiStarfighter, GiAnimalSkull, GiTechnoHeart } from 'react-icons/gi';
 
 type Option = {
   icon: React.ReactNode;
   title: string;
-  path?: string;
+  path: string;
 };
 
 export const options: Option[] = [
-  {
-    icon: <FaJediOrder size={25} />,
-    title: 'Jedis',
-    path: '/jedis',
-  },
-  {
-    icon: <FaSith size={25} />,
-    title: 'Siths',
-    path: '/siths',
-  },
   {
     icon: <GiFilmSpool size={25} />,
     title: 'Films',
@@ -26,6 +16,21 @@ export const options: Option[] = [
   {
     icon: <FaUserAstronaut size={25} />,
     title: 'Characters',
-    path: '/Characters',
+    path: '/characters',
+  },
+  {
+    icon: <GiStarfighter size={25} />,
+    title: 'Vehicles',
+    path: '/vehicles',
+  },
+  {
+    icon: <GiAnimalSkull size={25} />,
+    title: 'Species',
+    path: '/species',
+  },
+  {
+    icon: <GiTechnoHeart size={25} />,
+    title: 'He4rt Devs',
+    path: '/he4rt',
   },
 ];

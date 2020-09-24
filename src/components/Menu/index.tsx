@@ -1,20 +1,15 @@
-import { FaSun } from 'react-icons/fa';
-import { GiMoon } from 'react-icons/gi';
-
 import * as S from './styles';
 import { options } from './options';
+import { useRouter } from 'next/router'
 
-type MenuProps = {
-  isLight: boolean;
-  setIsLight: (value: boolean) => void;
-}
+export const Menu = () => {
+  const router = useRouter();
 
-export const Menu = ({ isLight, setIsLight }: MenuProps) => {
   return (
     <S.leftbar>
       <S.navbar>
         <S.logo>
-          <S.navbarLink>
+          <S.navbarLink onClick={() => router.push('/')}>
             <span>Star Wars</span>
             <svg
               aria-hidden="true"
@@ -41,20 +36,12 @@ export const Menu = ({ isLight, setIsLight }: MenuProps) => {
 
         {options.map((opt) => (
           <S.navItem key={opt.title}>
-            <S.navbarLink>
+            <S.navbarLink onClick={() => router.push(opt.path)}>
               {opt.icon}
               <S.linkText>{opt.title}</S.linkText>
             </S.navbarLink>
           </S.navItem>
         ))}
-
-        <S.navItem>
-          <S.navbarLink>
-            {!isLight ? <FaSun size={25} /> : <GiMoon size={25} />}
-            <S.linkText onClick={() => setIsLight(!isLight)}>Themify</S.linkText>
-          </S.navbarLink>
-        </S.navItem>
-
       </S.navbar>
     </S.leftbar>
   );
