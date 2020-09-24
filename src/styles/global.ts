@@ -27,16 +27,14 @@ export default createGlobalStyle`
   }
 
   body {
-    .dark {
-      --texts: #FFE300;
-      --background: #1c1e22;
-      --hoverEffect: #272b30;
-    }
+    --texts: #FFE300;
+    --background: #1c1e22;
+    --hoverEffect: #272b30;
 
-    .light {
+    /* .light {
       --texts: #000;
       --background: #f0f0f3;
       --hoverEffect: #ccc;
-    }
+    } */
   }
 `;
