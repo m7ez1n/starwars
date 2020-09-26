@@ -6,8 +6,8 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Raleway', sans-serif;
+    background-color: --var(backgroundApp);
   }
 
   a {
@@ -30,6 +30,7 @@ export default createGlobalStyle`
     --texts: #FFE300;
     --background: #1c1e22;
     --hoverEffect: #272b30;
+    --backgroundApp: #EEF2F7;
 
     /* .light {
       --texts: #000;
