@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Card, CardProps } from '../components/Card';
+import { Card, CardTitle, CardItem } from '../components/Card';
 
+type CharacterProps = {
+  name: string;
+  height: string;
+  gender: string;
+  birth_year: string;
+}
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -26,8 +32,13 @@ export default function Characters() {
 
   return (
     <>
-      {characters.map((people: CardProps) => (
-        <Card key={`key-${people.name}`} name={people.name} height={people.height} gender={people.gender} birth_year={people.birth_year} />
+      {characters.map((people: CharacterProps) => (
+        <Card key={`key-${people.name}`}>
+          <CardTitle>{people.name}</CardTitle>
+          <CardItem title="Height">{people.height}</CardItem>
+          <CardItem title="Gender">{people.gender}</CardItem>
+          <CardItem title="Birth year">{people.birth_year}</CardItem>
+        </Card>
       ))}
     </>
   );

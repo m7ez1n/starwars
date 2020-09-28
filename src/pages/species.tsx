@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Card } from '../components/Card';
+import { Card, CardItem, CardTitle } from '../components/Card';
 
 type SpeciesProps = {
   name: string;
@@ -34,13 +34,12 @@ export default function Species() {
   return (
     <>
       {species.map((film: SpeciesProps) => (
-        <Card
-          key={`key-${film.name}`}
-          name={film.name}
-          height={film.language}
-          gender={film.classification}
-          birth_year={film.average_lifespan}
-        />
+        <Card>
+          <CardTitle>{film.name}</CardTitle>
+          <CardItem title="Language">{film.language}</CardItem>
+          <CardItem title="Classification">{film.classification}</CardItem>
+          <CardItem title="Average Lifespan">{film.average_lifespan}</CardItem>
+        </Card>
       ))}
     </>
   );

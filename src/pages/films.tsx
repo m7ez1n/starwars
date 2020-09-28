@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card, CardProps } from '../components/Card';
+import { Card, CardItem, CardTitle } from '../components/Card';
 
 type FilmProps = {
   title: string;
@@ -33,13 +33,12 @@ export default function Films() {
   return (
     <>
       {films.map((film: FilmProps) => (
-        <Card
-          key={`key-${film.episode_id}`}
-          name={film.title}
-          height={film.director}
-          gender={film.release_date}
-          birth_year={film.episode_id.toString()}
-        />
+        <Card>
+          <CardTitle>{film.title}</CardTitle>
+          <CardItem title="Director">{film.director}</CardItem>
+          <CardItem title="Release Date">{film.release_date}</CardItem>
+          <CardItem title="Episode">{film.episode_id}</CardItem>
+        </Card>
       ))}
     </>
   );

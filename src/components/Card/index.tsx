@@ -1,32 +1,29 @@
+import React from 'react';
 import * as S from './styles';
 
-export type CardProps = {
-  name?: string;
-  height?: string;
-  gender?: string;
-  birth_year?: string;
-};
+type CardItemProps = WithChildren<{
+  title: string;
+}>;
 
-export const Card = ({ name, height, gender, birth_year }: CardProps) => {
+type WithChildren<T = {}> = T & { children?: React.ReactNode };
+
+export const Card = ({ children }: WithChildren) => {
   return (
-    <S.wrapper>
-      <S.content>
-        <S.name>{name}</S.name>
-        <S.wrapperCharacteristic>
-          <span>Height</span>
-          <p>{height}</p>
-        </S.wrapperCharacteristic>
-
-        <S.wrapperCharacteristic>
-          <span>Gender</span>
-          <p>{gender}</p>
-        </S.wrapperCharacteristic>
-
-        <S.wrapperCharacteristic>
-          <span>Birth year</span>
-          <p>{birth_year}</p>
-        </S.wrapperCharacteristic>
-      </S.content>
-    </S.wrapper>
+    <S.CardWrapper>
+      <S.CardContent>
+        {children}
+      </S.CardContent>
+    </S.CardWrapper>
   );
 };
+
+export const CardTitle = ({ children }: WithChildren) => (
+  <S.CardTitle>{children}</S.CardTitle>
+)
+
+export const CardItem = ({ title, children }: CardItemProps) => (
+  <S.CardItem>
+    <span>{title}</span>
+    <p>{children}</p>
+  </S.CardItem>
+)

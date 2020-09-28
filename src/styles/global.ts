@@ -7,7 +7,7 @@ export default createGlobalStyle`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     font-family: 'Raleway', sans-serif;
-    background-color: --var(backgroundApp);
+    background-color: var(--backgroundApp);
   }
 
   a {

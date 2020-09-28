@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Card } from '../components/Card';
+import { Card, CardItem, CardTitle } from '../components/Card';
 
 type VehiclesProps = {
   name: string;
@@ -34,13 +34,12 @@ export default function Vehicles() {
   return (
     <>
       {vehicles.map((film: VehiclesProps) => (
-        <Card
-          key={`key-${film.name}`}
-          name={film.name}
-          height={film.model}
-          gender={film.vehicle_class}
-          birth_year={film.cargo_capacity}
-        />
+        <Card>
+          <CardTitle>{film.name}</CardTitle>
+          <CardItem title="Model">{film.model}</CardItem>
+          <CardItem title="Capacity">{film.cargo_capacity}</CardItem>
+          <CardItem title="Class">{film.vehicle_class}</CardItem>
+        </Card>
       ))}
     </>
   );
