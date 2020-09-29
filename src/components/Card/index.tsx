@@ -1,15 +1,17 @@
-import React from 'react';
+import { WithChildren } from '../../common/ChildrenType';
 import * as S from './styles';
 
 type CardItemProps = WithChildren<{
   title: string;
 }>;
 
-type WithChildren<T = {}> = T & { children?: React.ReactNode };
+type CardProps = WithChildren<{
+  onClick?: () => void,
+}>
 
-export const Card = ({ children }: WithChildren) => {
+export const Card = ({ children, onClick }: CardProps) => {
   return (
-    <S.CardWrapper>
+    <S.CardWrapper onClick={onClick}>
       <S.CardContent>
         {children}
       </S.CardContent>
