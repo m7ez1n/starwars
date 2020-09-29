@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Card, CardItem, CardTitle } from '../components/Card';
+import { Modal } from '../components/Modal';
 
 type VehiclesProps = {
   name: string;
@@ -11,6 +12,7 @@ type VehiclesProps = {
 
 export default function Vehicles() {
   const [vehicles, setVehicles] = useState([]);
+  const [open, setOpen] = useState(false);
 
   const fetchvehicles = async () => {
     try {
@@ -33,14 +35,21 @@ export default function Vehicles() {
 
   return (
     <>
-      {vehicles.map((film: VehiclesProps) => (
-        <Card>
-          <CardTitle>{film.name}</CardTitle>
-          <CardItem title="Model">{film.model}</CardItem>
-          <CardItem title="Capacity">{film.cargo_capacity}</CardItem>
-          <CardItem title="Class">{film.vehicle_class}</CardItem>
+      {vehicles.map((vehicle: VehiclesProps) => (
+        <Card onClick={() => setOpen(!open)}>
+          <CardTitle>{vehicle.name}</CardTitle>
+          <CardItem title="Model">{vehicle.model}</CardItem>
+          <CardItem title="Capacity">{vehicle.cargo_capacity}</CardItem>
+          <CardItem title="Class">{vehicle.vehicle_class}</CardItem>
         </Card>
       ))}
+      <Modal 
+        title="Testando nome"
+        isOpen={open}
+        setIsOpen={setOpen}
+      >
+        <p>Só testando um role</p> 
+      </Modal>
     </>
   );
 }
