@@ -20,8 +20,8 @@ export default function Species() {
         throw new Error('Opa, algo deu errado!');
       }
 
-      const species = await response.json();
-      setSpecies(species.results);
+      const speciesResponse = await response.json();
+      setSpecies(speciesResponse.results);
     } catch (err) {
       console.error(err);
     }

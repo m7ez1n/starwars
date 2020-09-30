@@ -21,9 +21,10 @@ export default function Vehicles() {
       if (!response.ok) {
         throw new Error('Opa, algo deu errado!');
       }
-
-      const vehicles = await response.json();
-      setVehicles(vehicles.results);
+      
+      const vehiclesResponse = await response.json();
+      
+      setVehicles(vehiclesResponse.results);
     } catch (err) {
       console.error(err);
     }
@@ -43,13 +44,6 @@ export default function Vehicles() {
           <CardItem title="Class">{vehicle.vehicle_class}</CardItem>
         </Card>
       ))}
-      <Modal 
-        title="Testando nome"
-        isOpen={open}
-        setIsOpen={setOpen}
-      >
-        <p>Só testando um role</p> 
-      </Modal>
     </>
   );
 }

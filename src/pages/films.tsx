@@ -19,8 +19,8 @@ export default function Films() {
         throw new Error('Opa, algo deu errado!');
       }
 
-      const films = await response.json();
-      setFilms(films.results);
+      const filmsResponse = await response.json();
+      setFilms(filmsResponse.results);
     } catch (err) {
       console.error(err);
     }
