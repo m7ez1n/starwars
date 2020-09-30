@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const CardWrapper = styled.section`
+export const CardWrapper = styled(motion.section)`
   margin-top: 20px;
   margin-left: 40px;
   max-height: 250px;

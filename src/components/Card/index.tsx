@@ -11,7 +11,7 @@ type CardProps = WithChildren<{
 
 export const Card = ({ children, onClick }: CardProps) => {
   return (
-    <S.CardWrapper onClick={onClick}>
+    <S.CardWrapper onClick={onClick} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
       <S.CardContent>
         {children}
       </S.CardContent>
