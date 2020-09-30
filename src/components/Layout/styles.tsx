@@ -10,5 +10,10 @@ export const Main = styled.main`
 
   @media only screen and (max-width: 600px) {
     margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

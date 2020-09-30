@@ -17,6 +17,14 @@ export const CardWrapper = styled.section`
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 0;
+
+    &:last-child {
+      margin-bottom: 100px;
+    }
+  }
 `;
 
 export const CardContent = styled.div`
@@ -50,29 +58,3 @@ export const CardItem = styled.article`
     color: black;
   }
 `;
-
-/**
- *  ---> Pessoas <---
- *  - Nome
- *  - Altura
- *  - Genêro
- *  - Ano de nascimento
- *
- * ---> Filmes <---
- *   - titulo
- *   - diretor
- *   - data de lançamento
- *   - episodio id
- *
- * ---> Veiculos <---
- *   - Name
- *   - Model
- *   - manufacturer
- *   - vehicle_class
- *
- * ---> Species <---
- *   -Name
- *   - language
- *   -classification
- *   - average_lifespan
- * */
