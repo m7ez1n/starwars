@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { fetchPageRange } from '../common/FetchPageRange';
 import { Card, CardTitle, CardItem } from '../components/Card';
 
 type CharacterProps = {
@@ -13,14 +14,9 @@ export default function Characters() {
 
   const fetchCharacters = async () => {
     try {
-      const response = await fetch('https://swapi.dev/api/people/');
-
-      if (!response.ok) {
-        throw new Error('Opa, algo deu errado!');
-      }
-
-      const peoples = await response.json();
-      setCharacters(peoples.results);
+      const response = await fetchPageRange(1, 9, 'https://swapi.dev/api/people/');
+      
+      setCharacters(response);
     } catch (err) {
       console.error(err);
     }

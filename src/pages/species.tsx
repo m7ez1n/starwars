@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { fetchPageRange } from '../common/FetchPageRange';
 import { Card, CardItem, CardTitle } from '../components/Card';
 
 type SpeciesProps = {
@@ -14,14 +14,9 @@ export default function Species() {
 
   const fetchspecies = async () => {
     try {
-      const response = await fetch('https://swapi.dev/api/species/');
+      const response = await fetchPageRange(1, 4,'https://swapi.dev/api/species/');
 
-      if (!response.ok) {
-        throw new Error('Opa, algo deu errado!');
-      }
-
-      const speciesResponse = await response.json();
-      setSpecies(speciesResponse.results);
+      setSpecies(response);
     } catch (err) {
       console.error(err);
     }

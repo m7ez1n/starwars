@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-
+import { fetchPageRange } from '../common/FetchPageRange';
 import { Card, CardItem, CardTitle } from '../components/Card';
-import { Modal } from '../components/Modal';
 
 type VehiclesProps = {
   name: string;
@@ -12,19 +11,12 @@ type VehiclesProps = {
 
 export default function Vehicles() {
   const [vehicles, setVehicles] = useState([]);
-  const [open, setOpen] = useState(false);
 
   const fetchvehicles = async () => {
     try {
-      const response = await fetch('https://swapi.dev/api/vehicles/');
+      const response = await fetchPageRange(1, 4, 'https://swapi.dev/api/vehicles/');
 
-      if (!response.ok) {
-        throw new Error('Opa, algo deu errado!');
-      }
-      
-      const vehiclesResponse = await response.json();
-      
-      setVehicles(vehiclesResponse.results);
+      setVehicles(response);
     } catch (err) {
       console.error(err);
     }
@@ -37,7 +29,7 @@ export default function Vehicles() {
   return (
     <>
       {vehicles.map((vehicle: VehiclesProps) => (
-        <Card onClick={() => setOpen(!open)}>
+        <Card>
           <CardTitle>{vehicle.name}</CardTitle>
           <CardItem title="Model">{vehicle.model}</CardItem>
           <CardItem title="Capacity">{vehicle.cargo_capacity}</CardItem>
