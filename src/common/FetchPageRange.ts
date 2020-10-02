@@ -1,11 +1,10 @@
-// TODO terminar de tipar essas funções
 const concat = (xs, ys) => xs.concat(ys)
 
 const reduce = reducer => initialValue => xs => xs.reduce(reducer, initialValue)
 
-const prop = (propName: string) => obj => obj[propName]
+const prop = (propName: string) => (obj: Record<any, any>) => obj[propName]
 
-const map = f => xs => xs.map(f)
+const map = (f: <T, U>(x: T) => U) => <T>(xs: T[]) => xs.map(f)
 
 const range = (start: number, end: number) =>  Array.from({length: end - start + 1}).map((_, index) => start + index)
 
