@@ -1,6 +1,17 @@
-const concat = (xs, ys) => xs.concat(ys)
+type Semigroup<T> = {
+  concat:
+    | ((x: Semigroup<T>) => Semigroup<T>)
+    | typeof Array.prototype["concat"]
+    | typeof String.prototype["concat"]
+}
+const concat = <T>(xs: Semigroup<T>, ys: Semigroup<T>) => xs.concat(ys)
 
-const reduce = reducer => initialValue => xs => xs.reduce(reducer, initialValue)
+type Foldable<T> = {
+  reduce: <U>(f: (a: T, value: U) => T, initialValue: T) => U
+}
+const reduce = <T, U>(reducer: (accum: T, value: U) => T) => (
+  initialValue: T
+) => (xs: Foldable<T>) => xs.reduce(reducer, initialValue)
 
 const prop = (propName: string) => (obj: Record<any, any>) => obj[propName]
 
