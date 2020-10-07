@@ -1,6 +1,6 @@
-const concat = (xs, ys) => xs.concat(ys)
+const concat = (xs: any, ys: any) => xs.concat(ys)
 
-const reduce = reducer => initialValue => xs => xs.reduce(reducer, initialValue)
+const reduce = (reducer: any) => (initialValue: any) => (xs: any) => xs.reduce(reducer, initialValue)
 
 const prop = (propName: string) => (obj: Record<any, any>) => obj[propName]
 
