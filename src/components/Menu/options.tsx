@@ -31,6 +31,6 @@ export const options: Option[] = [
   {
     icon: <GiTechnoHeart size={25} />,
     title: 'He4rt Devs',
-    path: '/he4rt',
+    path: 'https://heartdevs.com/',
   },
 ];

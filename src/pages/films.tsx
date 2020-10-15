@@ -33,7 +33,7 @@ export default function Films() {
   return (
     <>
       {films.map((film: FilmProps) => (
-        <Card>
+        <Card key={`key-${film.title}`}>
           <CardTitle>{film.title}</CardTitle>
           <CardItem title="Director">{film.director}</CardItem>
           <CardItem title="Release Date">{film.release_date}</CardItem>
@@ -43,5 +43,3 @@ export default function Films() {
     </>
   );
 }
-
-// TODO criar o component de header dinamico
