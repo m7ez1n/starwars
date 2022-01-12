@@ -11,7 +11,7 @@ export const options: Option[] = [
   {
     icon: <GiFilmSpool size={25} />,
     title: 'Films',
-    path: '/films',
+    path: '/',
   },
   {
     icon: <FaUserAstronaut size={25} />,

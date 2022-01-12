@@ -2,13 +2,9 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const CardWrapper = styled(motion.section)`
-  margin-top: 20px;
-  margin-left: 40px;
-  max-height: 250px;
-  min-height: 200px;
-  max-width: 300px;
+  margin: 20px 0 0px 40px;
+  max-width: 270px;
   width: 100%;
-  height: auto;
   cursor: pointer;
 
   border-radius: 20px;

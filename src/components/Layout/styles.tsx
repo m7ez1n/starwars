@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  margin-left: 5rem;
-  margin-right: 5rem;
-  padding: 1rem;
+  padding: 2rem 5rem 8rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -17,7 +15,7 @@ export const Main = styled.main`
     flex-direction: column;
     align-items: center;
   }
-  
+
   @media only screen and (min-width: 1950px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
@@ -29,7 +27,7 @@ export const Main = styled.main`
   @media only screen and (max-width: 1440px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+
   @media only screen and (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
   }
